@@ -1,0 +1,42 @@
+<!-- HTML code for table used to create and update entries -->
+<div class="card">
+    <div class="card-body">
+        <form (ngSubmit)="createAndUpdate()">
+            <div class="mb-3">
+                <label for="id" class="form-label">Animal ID</label>
+                <input type="text" name="animal_id" [(ngModel)]="animal.animal_id" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="type" class="form-label">Animal Type</label>
+                <input type="text" name="animal_type" [(ngModel)]="animal.animal_type" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" [(ngModel)]="animal.name" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="breed" class="form-label">Breed</label>
+                <input type="text" name="breed" [(ngModel)]="animal.breed" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="color" class="form-label">Color</label>
+                <input type="text" name="color" [(ngModel)]="animal.color" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="text" name="age_upon_outcome" [(ngModel)]="animal.age_upon_outcome" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="sex" class="form-label">Sex</label>
+                <input type="text" name="sex" [(ngModel)]="animal.sex_upon_outcome" class="form-control">
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+    </div>
+</div>
