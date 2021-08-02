@@ -10,8 +10,8 @@ import { CreateAndUpdateComponent } from './components/create-and-update/create-
 import { ReadAndDeleteComponent } from './components/read-and-delete/read-and-delete.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AnimalService } from './shared/animal.service';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './shared/auth.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
