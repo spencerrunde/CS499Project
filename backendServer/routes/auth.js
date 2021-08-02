@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const User = require('../models/user');
-const bcrypt = require('bcrypt');
-var jwt = require('jsonwebtoken');
+const User = require('../models/userSchema');
+const bcrypt = require('bcrypt'); // Used to salt and hash passwords
+var jwt = require('jsonwebtoken'); // Used to assign tokens to user logins
 
+// Defining register route
 router.post('/register', async (req, res) => {
 
     // Used to hash passwords
@@ -22,17 +23,18 @@ router.post('/register', async (req, res) => {
     }
 });
 
+// Defining login route
 router.post('/login', async (req, res) => {
 
-    // email check
+    // Email check
     const user = await User.findOne({ email: req.body.email });
     if (!user) return res.status(400).send('Email does not exist')
 
-    // password check
+    // Password check
     const validPass = await bcrypt.compare(req.body.password, user.password);
     if (!validPass) return res.status(400).send('Password is incorrect')
 
-    // creating token for user
+    // Creating token for user
     const token = jwt.sign({_id: user._id}, process.env.JWT_SECRET);
     res.header('auth-token', token).send({
         token: token

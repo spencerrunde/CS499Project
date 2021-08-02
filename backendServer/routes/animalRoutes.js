@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const Animal = require('../models/animalSchema');
-const verify = require('./verifyToken');
+const verify = require('./verifyToken'); // Requires user to be verified to access these routes
 
-router.post('/create', verify, (req, res, next) => {
+// Defining create route
+router.post('/create', verify, (req, res) => {
     const newAnimal = new Animal({
         age_upon_outcome: req.body.age_upon_outcome,
         animal_id: req.body.animal_id,
@@ -27,7 +27,8 @@ router.post('/create', verify, (req, res, next) => {
     })
 });
 
-router.get('/read', verify, (req, res, next) => {
+// Defining read route
+router.get('/read', verify, (req, res) => {
     Animal.find({}, (err, animals) => {
         if(err)
             res.status(500).json({ errmsg: err });
@@ -36,7 +37,8 @@ router.get('/read', verify, (req, res, next) => {
     })
 });
 
-router.put('/update', verify, (req, res, next) => {
+// Defining update route
+router.put('/update', verify, (req, res) => {
     Animal.findById(req.body._id, (err, animal) => {
         if(err)
         res.status(500).json({ errmsg: err });
@@ -62,7 +64,8 @@ router.put('/update', verify, (req, res, next) => {
     })
 });
 
-router.delete('/delete/:id', verify, (req, res, next) => {
+// Defining delete route
+router.delete('/delete/:id', verify, (req, res) => {
     Animal.findOneAndRemove({_id:req.params.id}, (err, animal) => {
         if(err)
         res.status(500).json({ errmsg: err });

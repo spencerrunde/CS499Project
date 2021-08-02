@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
+// Setting Schema as a type of mongoose schema
 const Schema = mongoose.Schema;
 
+// Defining animal schema
 const animalSchema = new Schema({
     age_upon_outcome: {type:String},
     animal_id: {type:String},
@@ -17,8 +19,11 @@ const animalSchema = new Schema({
     sex_upon_outcome: {type:String}
 });
 
+// Defining database to be used for Animal data
 const animalDB = mongoose.connection.useDb('AAC');
 
+// Creating mongoose model with collection name animals, using definined schema
 const animalInfo = animalDB.model('animals', animalSchema);
 
+// Exporting model
 module.exports = animalInfo;
