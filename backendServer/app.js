@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-const port = process.env.PORT || 3000; // Setting default port for backend to 3000
+const port = 3000; // Setting default port for backend to 3000
 const http = require("http");
 
 const mongoose = require("mongoose");

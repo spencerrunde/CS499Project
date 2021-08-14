@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 93vh;
+}
+
+.card {
+  padding: 1.5rem;
+  margin: auto;
+  width: 75vw;
+  box-shadow: rgba(2, 117, 216, 0.4) 5px 5px, rgba(2, 117, 216, 0.3) 10px 10px,
+    rgba(2, 117, 216, 0.2) 15px 15px, rgba(2, 117, 216, 0.1) 20px 20px,
+    rgba(2, 117, 216, 0.05) 25px 25px;
+}

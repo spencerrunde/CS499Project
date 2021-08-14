@@ -1,0 +1,29 @@
+.card {
+  padding: 2rem 4rem;
+  text-align: center;
+  border: none;
+}
+
+.card-title {
+  text-align: left;
+  padding-bottom: 1rem;
+}
+
+.btn-primary {
+  margin: 0.5rem 0.5rem 0.5rem 0rem;
+}
+
+.btn-danger {
+  margin: 0.5rem 0rem 0.5rem 0.5rem;
+}
+
+@media (max-width: 1074px) {
+  .btn-primary {
+    margin: 0.5rem 0;
+  }
+  
+  .btn-danger {
+    margin: 0.5rem 0;
+  }
+}
+

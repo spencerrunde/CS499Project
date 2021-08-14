@@ -1,34 +1,47 @@
 <!-- HTML and JS code for table that populates with data from RESTful API -->
-<div class="card table-responsive">
+<div class="container-fluid">
+  <div class="card table-responsive">
     <div class="card-body">
-        <h4 class="card-title"> Animal Shelter Outcomes </h4>
-        <table class="table table-bordered table-hover">
-            <thead class="table-light">
-                <tr>
-                    <th>Animal ID</th>
-                    <th>Animal Type</th>
-                    <th>Name</th>
-                    <th>Breed</th>
-                    <th>Color</th>
-                    <th>Age</th>
-                    <th>Sex </th> 
-                    <td>Edit Entry</td>
-                    <td>Delete Entry</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let animal of animals">
-                    <td>{{animal.animal_id}}</td>
-                    <td>{{animal.animal_type}}</td>
-                    <td>{{animal.name}}</td>
-                    <td>{{animal.breed}}</td>
-                    <td>{{animal.color}}</td>
-                    <td>{{animal.age_upon_outcome}}</td>
-                    <td>{{animal.sex_upon_outcome}}</td>
-                    <td><button class="btn btn-primary" (click)="updateAnimal(animal)"> Update </button></td>
-                    <td><button class="btn btn-danger" (click)="deleteAnimal(animal)"> Delete </button></td>
-                </tr>
-            </tbody>
-        </table>
+      <h4 class="card-title">Animal Shelter Outcomes</h4>
+      <table class="table table-bordered table-hover align-middle">
+        <caption>
+          List of all animals currently in database
+        </caption>
+        <thead class="table-light align-middle">
+          <tr>
+            <th>Animal ID</th>
+            <th>Animal Type</th>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Color</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <td>Edit or Delete Entry</td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Iterates through database array, populating table with animal data -->
+          <tr *ngFor="let animal of animals">
+            <td>{{ animal.animal_id }}</td>
+            <td>{{ animal.animal_type }}</td>
+            <td>{{ animal.name }}</td>
+            <td>{{ animal.breed }}</td>
+            <td>{{ animal.color }}</td>
+            <td>{{ animal.age_upon_outcome }}</td>
+            <td>{{ animal.sex_upon_outcome }}</td>
+            <td>
+              <!-- Updates this animal on click -->
+              <button class="btn btn-primary" (click)="updateAnimal(animal)">
+                Update
+              </button>
+              <!-- Deletes this animal on click -->
+              <button class="btn btn-danger" (click)="deleteAnimal(animal)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>

@@ -1,3 +1,4 @@
+// Animal class with all variables
 export class Animal {
     public _id!: string;
     public age_upon_outcome!: string;

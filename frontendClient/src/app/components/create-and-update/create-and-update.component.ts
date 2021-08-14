@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { Animal } from '../../shared/animal';
 import { AnimalService } from '../../shared/animal.service';
-import { Animal } from '../../animal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-and-update',
   templateUrl: './create-and-update.component.html',
-  styleUrls: ['./create-and-update.component.css']
+  styleUrls: ['./create-and-update.component.css'],
 })
 export class CreateAndUpdateComponent implements OnInit {
   public animal!: Animal;
-  constructor(private animalService: AnimalService, private router: Router) { }
+  constructor(private animalService: AnimalService, private router: Router) {}
 
   ngOnInit() {
     this.animal = this.animalService.getter();
@@ -18,25 +19,27 @@ export class CreateAndUpdateComponent implements OnInit {
 
   createAndUpdate() {
     if (this.animal._id == undefined) {
+      // Creating a new animal entry if ID does not exist
       this.animalService.createAnimal(this.animal).subscribe(
-        data => {
+        (data) => {
           console.log(data);
-          this.router.navigate(['ReadAndDelete']);
+          this.router.navigate(['ReadAndDelete']); // Navigating back to table route
         },
-        error => {
+        (error) => {
           console.log(error);
         }
-      )
+      );
     } else {
       this.animalService.updateAnimal(this.animal).subscribe(
-        data => {
+        // Updating an animal entry if ID does exist
+        (data) => {
           console.log(data);
-          this.router.navigate(['ReadAndDelete']);
+          this.router.navigate(['ReadAndDelete']); // Navigating back to table route
         },
-        error => {
+        (error) => {
           console.log(error);
         }
-      )
+      );
     }
   }
 }
