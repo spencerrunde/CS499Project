@@ -20,7 +20,7 @@ Before you do anything, make sure that you have Git, Node.js, and MongoDB instal
 
 You can clone this project by opening a terminal and running the command ``` git clone https://github.com/spencerrunde/CS499Project.git ```. This will create a local copy of the repository on your system.
 
-Afterwards, open the project folder in VSCode. Start a new terminal, and run the command ``` cd backendServer ``` to move into the backend folder. Run ``` npm install ``` to install all the necessary dependencies. Finally, you can run ``` node app.js ``` to start the backend server.
+Afterwards, open the project folder in VSCode. Start a new terminal inside of VSCode, and run the command ``` cd backendServer ``` to move into the backend folder. Run ``` npm install ``` to install all the necessary dependencies. Finally, you can run ``` node app.js ``` to start the backend server.
 
 Create a new terminal by pressing the + icon on the top right of the terminal. The process for the frontend is much the same. ``` cd frontendClient ``` to move into the frontend directory. Run ``` npm install ``` again to install all the necessary dependencies. ``` ng serve ``` will build and deploy the Angular frontend.
 
