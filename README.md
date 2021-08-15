@@ -4,15 +4,15 @@ Capstone project that contains a program rewritten using the MEAN stack, with ad
 ## Technologies
 
 ### Backend
-Mongoose
-Express
-jsonwebtoken
-bcrypt
+- Mongoose
+- Express
+- jsonwebtoken
+- bcrypt
 
 ### Frontend
-Angular
-Typescript
-Bootstrap
+- Angular
+- Typescript
+- Bootstrap
 
 ## Installation
 
