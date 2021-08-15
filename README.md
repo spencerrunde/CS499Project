@@ -28,12 +28,18 @@ You can now navigate to http://localhost:4200/ to view the project!
 
 ## Usage
 
+![Register page](images/register.png)
+
 You will land on the register page. Choose any email and password you want, and it will be pushed into the Users database. Upon successfully registering your information, you will be taken to the login page.
 
+![Login page](images/login.png)
 Login with the same information you just used to register, and you will be granted full access to the app.
 
+![The main page](images/emptyTable.png)
 Here you can see the Animal Shelter Outcomes datatable. Your table will be completely empty to start, so go ahead and add a new entry! 
 
+![New entry form](images/newEntry.png)
 Fill in the form with whatever information you want, and hit Submit.
 
+![Updated table](images/tableWithEntry.png)
 You will be taken back to the main page, and you can see the table has been updated with your new entry. You can edit or delete this entry if you wish by hitting the buttons to the right. 
